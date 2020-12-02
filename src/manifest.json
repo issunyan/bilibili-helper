@@ -19,6 +19,7 @@
   "content_scripts": [
     {
       "matches": ["http://*.bilibili.com/*", "https://*.bilibili.com/*"],
+      "css": ["css/content.css"],
       // "all_frames": true,
       "js": ["js/content.js"],
       // "run_at": "document_start"
