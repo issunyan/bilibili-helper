@@ -1,0 +1,11 @@
+/lambda/
+/dist
+/scripts
+/config
+.history
+/release
+/node_modules/
+/build
+/test
+babel.config.js
+vue.config.js

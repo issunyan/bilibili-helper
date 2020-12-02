@@ -1,0 +1,41 @@
+{
+  "manifest_version": 2,
+  "name": "哔哩哔哩下载助手",
+  "version": "0.0.1",
+  "description": "bilibili 哔哩哔哩 B站 下载助手 帮你下载版权受限（能看不能缓存）的 番剧 视频",
+  "icons": {
+    "128": "assets/icon128.png",
+    "16": "assets/icon16.png",
+    "32": "assets/icon32.png",
+    "48": "assets/icon48.png"
+  },
+  "background": {
+    // "scripts": ["lib.js"]
+  },
+  "browser_action": {
+    "default_popup": "popup.html",
+    "default_title": "哔哩哔哩下载助手"
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://*.bilibili.com/*", "https://*.bilibili.com/*"],
+      // "all_frames": true,
+      "js": ["js/content.js"],
+      // "run_at": "document_start"
+      "run_at": "document_end"
+    }
+  ],
+  "permissions": [
+    "proxy",
+    "management",
+    "webRequest",
+    "webRequestBlocking",
+    "storage",
+    "bookmarks",
+    "chrome://favicon/*",
+    "downloads"
+  ],
+  "web_accessible_resources": ["*.*", "**/*.*"],
+  "offline_enabled": true,
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
+}
